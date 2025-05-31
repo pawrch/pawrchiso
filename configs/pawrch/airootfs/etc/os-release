@@ -1,0 +1,9 @@
+NAME="pawrch"
+ID=pawrch
+PRETTY_NAME="pawrch - for furries, by a furry"
+VERSION="2025.05.31"
+VERSION_ID="2025.05.31"
+ANSI_COLOR="1;36"
+HOME_URL="https://furry.wine"
+SUPPORT_URL="https://furry.wine/support"
+BUG_REPORT_URL="https://furry.wine/issues"
