@@ -7,6 +7,7 @@ iso_publisher="rofl <rofl@furry.wine>"
 iso_application="pawrch Live/Rescue DVD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
+ISO_BUILD_STRIP=false
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
            'uefi-ia32.systemd-boot.esp' 'uefi-x64.systemd-boot.esp'
