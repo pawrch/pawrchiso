@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# A simple script to run an archiso image using qemu. The image can be booted
+# A simple script to run an pawrchiso image using qemu. The image can be booted
 # using BIOS or UEFI.
 #
 # Requirements:
@@ -17,7 +17,7 @@ print_help() {
     local usagetext
     IFS='' read -r -d '' usagetext <<EOF || true
 Usage:
-    run_archiso [options]
+    run_pawrchiso [options]
 
 Options:
     -a              set accessibility support using brltty
@@ -32,7 +32,7 @@ Options:
 
 Example:
     Run an image using UEFI:
-    $ run_archiso -u -i archiso-2020.05.23-x86_64.iso
+    $ run_pawrchiso -u -i pawrchiso-2020.05.23-x86_64.iso
 EOF
     printf '%s' "${usagetext}"
 }
@@ -96,7 +96,7 @@ run_image() {
         -boot order=d,menu=on,reboot-timeout=5000 \
         -m "size=3072,slots=0,maxmem=$((3072*1024*1024))" \
         -k en-us \
-        -name archiso,process=archiso_0 \
+        -name pawrchiso,process=pawrchiso_0 \
         -device virtio-scsi-pci,id=scsi0 \
         -device "scsi-${mediatype%rom},bus=scsi0.0,drive=${mediatype}0" \
         -drive "id=${mediatype}0,if=none,format=raw,media=${mediatype/hd/disk},read-only=on,file=${image}" \
@@ -122,7 +122,7 @@ mediatype='cdrom'
 secure_boot='off'
 display='sdl'
 qemu_options=()
-working_dir="$(mktemp -dt run_archiso.XXXXXXXXXX)"
+working_dir="$(mktemp -dt run_pawrchiso.XXXXXXXXXX)"
 trap cleanup_working_dir EXIT
 
 if (( ${#@} > 0 )); then
@@ -158,7 +158,7 @@ if (( ${#@} > 0 )); then
                 qemu_options+=(-vnc 'vnc=0.0.0.0:0,vnc=[::]:0')
                 ;;
             *)
-                printf '%s\n' "Error: Wrong option. Try 'run_archiso -h'."
+                printf '%s\n' "Error: Wrong option. Try 'run_pawrchiso -h'."
                 exit 1
                 ;;
         esac

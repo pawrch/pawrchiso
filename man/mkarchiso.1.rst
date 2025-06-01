@@ -1,23 +1,23 @@
 =========
-mkarchiso
+mkpawrchiso
 =========
 
 ------------------------
-Arch Linux ISO generator
+pawrch Linux ISO generator
 ------------------------
 
-:Version: archiso |version|
+:Version: pawrchiso |version|
 :Manual section: 1
 
 Synopsis
 ========
 
-**mkarchiso** [options] *profile_directory*
+**mkpawrchiso** [options] *profile_directory*
 
 Description
 ===========
 
-**mkarchiso** creates an ISO, netboot artifacts and a bootstrap tarball and optionally signs them.
+**mkpawrchiso** creates an ISO, netboot artifacts and a bootstrap tarball and optionally signs them.
 
 Options
 =======
@@ -55,26 +55,26 @@ Examples
 Build the releng profile
 ------------------------
 
-   mkarchiso |profile_dir|/configs/releng
+   mkpawrchiso |profile_dir|/configs/releng
 
 Bugs
 ====
 
-https://gitlab.archlinux.org/archlinux/archiso/-/issues
+https://gitlab.archlinux.org/archlinux/pawrchiso/-/issues
 
 Authors
 =======
 
-archiso is maintained by the Arch Linux community. Refer to the *AUTHORS* file for a full list of contributors.
+pawrchiso is maintained by the pawrch Linux community. Refer to the *AUTHORS* file for a full list of contributors.
 
 Copyright
 =========
 
-Copyright 🄯 archiso contributors. GPL-3.0-or-later.
+Copyright 🄯 pawrchiso contributors. GPL-3.0-or-later.
 
 See also
 ========
 
-* /usr/share/doc/archiso/README.profile.rst
+* /usr/share/doc/pawrchiso/README.profile.rst
 
 .. include:: variables.rst

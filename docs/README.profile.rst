@@ -2,7 +2,7 @@
 profile
 =======
 
-An archiso profile consists of several configuration files and a directory for files to be added to the resulting image.
+An pawrchiso profile consists of several configuration files and a directory for files to be added to the resulting image.
 
 .. code:: plaintext
 
@@ -27,14 +27,14 @@ of the image.
 The image file is constructed from some of the variables in ``profiledef.sh``: ``<iso_name>-<iso_version>-<arch>.iso``
 (e.g. ``archlinux-202010-x86_64.iso``).
 
-* ``iso_name``: The first part of the name of the resulting image (defaults to ``mkarchiso``)
-* ``iso_label``: The ISO's volume label (defaults to ``MKARCHISO``)
-* ``iso_publisher``: A free-form string that states the publisher of the resulting image (defaults to ``mkarchiso``)
+* ``iso_name``: The first part of the name of the resulting image (defaults to ``mkpawrchiso``)
+* ``iso_label``: The ISO's volume label (defaults to ``MKPAWRCHISO``)
+* ``iso_publisher``: A free-form string that states the publisher of the resulting image (defaults to ``mkpawrchiso``)
 * ``iso_application``: A free-form string that states the application (i.e. its use-case) of the resulting image (defaults
-  to ``mkarchiso iso``)
+  to ``mkpawrchiso iso``)
 * ``iso_version``: A string that states the version of the resulting image (defaults to ``""``)
 * ``install_dir``: A string (maximum eight characters long, which **must** consist of ``[a-z0-9]``) that states the
-  directory on the resulting image into which all files will be installed (defaults to ``mkarchiso``)
+  directory on the resulting image into which all files will be installed (defaults to ``mkpawrchiso``)
 * ``buildmodes``: An optional list of strings, that state the build modes that the profile uses. Only the following are
   understood:
 
@@ -92,8 +92,8 @@ Packages have to be listed one per line. Lines starting with a ``#`` and blank l
 
   .. note::
 
-    The **mkinitcpio** and **mkinitcpio-archiso** packages are mandatory (see `#30
-    <https://gitlab.archlinux.org/archlinux/archiso/-/issues/30>`_).
+    The **mkinitcpio** and **mkinitcpio-pawrchiso** packages are mandatory (see `#30
+    <https://gitlab.archlinux.org/archlinux/pawrchiso/-/issues/30>`_).
 
 This file is required when generating ISO images using the ``iso`` or ``netboot`` build modes.
 
@@ -108,7 +108,7 @@ Some configuration options will not be used or will be modified:
   not the same as the system's option. In all other cases the system's pacman cache is used.
 * ``HookDir``: it is **always** set to the ``/etc/pacman.d/hooks`` directory in the work directory's airootfs to allow
   modification via the profile and ensure interoparability with hosts using dracut (see `#73
-  <https://gitlab.archlinux.org/archlinux/archiso/-/issues/73>`_)
+  <https://gitlab.archlinux.org/archlinux/pawrchiso/-/issues/73>`_)
 * ``RootDir``: it is **always** removed, as setting it explicitely otherwise refers to the host's root filesystem (see
   ``man 8 pacman`` for further information on the ``-r`` option used by ``pacstrap``)
 * ``LogFile``: it is **always** removed, as setting it explicitely otherwise refers to the host's pacman log file (see
@@ -140,15 +140,15 @@ explained in the following subsections.
 The following *custom template identifiers* are understood and will be replaced according to the assignments of the
 respective variables in ``profiledef.sh``:
 
-* ``%ARCHISO_LABEL%``: Set this using the ``iso_label`` variable in ``profiledef.sh``.
+* ``%PAWRCHISO_LABEL%``: Set this using the ``iso_label`` variable in ``profiledef.sh``.
 * ``%INSTALL_DIR%``: Set this using the ``install_dir`` variable in ``profiledef.sh``.
 * ``%ARCH%``: Set this using the ``arch`` variable in ``profiledef.sh``.
 
-Additionally there are also *custom template identifiers* have harcoded values set by ``mkarchiso`` that cannot be
+Additionally there are also *custom template identifiers* have harcoded values set by ``mkpawrchiso`` that cannot be
 overridden:
 
-* ``%ARCHISO_UUID%``: the ISO 9660 modification date in UTC, i.e. its "UUID",
-* ``%ARCHISO_SEARCH_FILENAME%``: file path on ISO 9660 that can be used by GRUB to find the ISO volume
+* ``%PAWRCHISO_UUID%``: the ISO 9660 modification date in UTC, i.e. its "UUID",
+* ``%PAWRCHISO_SEARCH_FILENAME%``: file path on ISO 9660 that can be used by GRUB to find the ISO volume
   (**for GRUB ``.cfg`` files only**).
 
 efiboot

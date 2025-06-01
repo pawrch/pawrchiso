@@ -106,8 +106,8 @@ Manual formatting (BIOS only)
 
   .. note::
      These steps are the general workflow, you can skip some of them, using another file system if your boot loader
-     supports it, installing to another directory than ``arch/`` or using more than one partition. Just ensure that
-     main boot parameters  (``archisolabel=`` and ``archisobasedir=``) are set correctly according to your setup.
+     supports it, installing to another directory than ``pawrch/`` or using more than one partition. Just ensure that
+     main boot parameters  (``pawrchisolabel=`` and ``pawrchisobasedir=``) are set correctly according to your setup.
 
      Using here a MBR partition mode as example, but GPT should also work if the machine firmware is not broken. Just
      ensure that partition is set with attribute ``2: legacy BIOS bootable`` and use ``gptmbr.bin`` instead of
