@@ -63,3 +63,6 @@ squashfs-tools
 dmidecode
 lsscsi
 nvme-cli
+edk2-shell
+efitools
+sbctl
